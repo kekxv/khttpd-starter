@@ -1,3 +1,6 @@
 build                               --@boost.mysql//:ssl=boringssl
 build                               --@boost.asio//:ssl=boringssl
 
+
+build:win                           --cxxopt='/std:c++17'
+build:win                           --cxxopt='/utf-8'

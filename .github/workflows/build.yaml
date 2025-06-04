@@ -21,4 +21,8 @@ jobs:
         with:
           bazelisk-version: 1.x
       - name: Bazel Build
+        if: ${{ matrix.os == 'windows-latest' }}
+        run: bazel build --config=win app
+      - name: Bazel Build
+        if: ${{ matrix.os != 'windows-latest' }}
         run: bazel build app
